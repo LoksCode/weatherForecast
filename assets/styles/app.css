@@ -4,10 +4,10 @@ body {
 }
 
 img {
-  margin-top: 20px;
-  height: 65px;
-  width: 90px;
-  background-color: powderblue;
+  height: 60%;
+  width: 40%;
+  position: relative;
+  left: 0%;
 }
 
 h1 {
@@ -42,6 +42,7 @@ button {
 
 .weather-info {
   margin-top: 20px;
+  display: inline-block;
 }
 
 .description {
@@ -50,10 +51,10 @@ button {
 }
 
 .container {
-  max-width: 300px;
+  max-width: 350px;
   margin: 0 auto;
   text-align: center;
-  padding: 45px;
+  padding: 20px;
   background-image: linear-gradient(
     to top right,
     rgba(49, 184, 247, 0.534),
@@ -62,5 +63,4 @@ button {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 105px;
-  flex-direction: row;
 }

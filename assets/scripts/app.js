@@ -1,7 +1,6 @@
 const searchBtn = document.getElementById('search');
 const userInput = document.getElementById('locationInput');
 const APIKEY = '4c8f9c624f821eb34cdc733259748f7a';
-const apiurl = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=${APIKEY}`;
 
 function searchButtonHandler() {
   if (!userInput.value) {
@@ -9,13 +8,23 @@ function searchButtonHandler() {
     return;
   }
   const usrInput = userInput.value;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${usrInput}&appid=${APIKEY}`;
-  console.log(usrInput);
-  getUserCoords(apiUrl);
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${usrInput}&units=metric&appid=${APIKEY}`;
+  console.log('User entered: ' + usrInput);
+  getWeatherInfo(apiUrl);
   userInput.value = '';
 }
 
-function getUserCoords(url) {
+function updateDOM(elId, content) {
+  document.getElementById(elId).textContent = `${content}`;
+}
+
+function setWeatherIcon(imgCode) {
+  const weatherPic = document.getElementById('weather-pic');
+  const iconUrl = `https://openweathermap.org/img/wn/${imgCode}@2x.png`;
+  weatherPic.src = iconUrl;
+}
+
+function getWeatherInfo(url) {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -26,6 +35,10 @@ function getUserCoords(url) {
     })
     .then((data) => {
       console.log(data);
+      setWeatherIcon(data.weather[0].icon);
+      updateDOM('location', data.name);
+      updateDOM('temperature', `${Math.floor(data.main.temp)}°C`);
+      updateDOM('weather-desc', data.weather[0].description);
     })
     .catch((error) => {
       console.log(error);
