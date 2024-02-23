@@ -8,6 +8,7 @@ img {
   width: 40%;
   position: relative;
   left: 0%;
+  display: none;
 }
 
 h1 {
