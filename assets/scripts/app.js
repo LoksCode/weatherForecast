@@ -22,6 +22,7 @@ function setWeatherIcon(imgCode) {
   const weatherPic = document.getElementById('weather-pic');
   const iconUrl = `https://openweathermap.org/img/wn/${imgCode}@2x.png`;
   weatherPic.src = iconUrl;
+  weatherPic.classList;
 }
 
 function getWeatherInfo(url) {
