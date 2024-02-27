@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Forecast</title>
+  <title>Weather checker</title>
   <link rel="stylesheet" href="assets/styles/app.css" defer/>
 <body>
     <div class="container">
-        <h1>Weather Forecast</h1>
-        <input type="text" id="locationInput" placeholder="Enter a city...">
-          <div><button id="search">Search</button></div>
-        <div class="weather-info">
-            <h2 id="location"></h2>
-            <p id="temperature"></p>
-            <p class="description" id="weather-desc"></p>
-        </div>
+      <h1>What's the weather like today?</h1>
+      <input type="text" id="locationInput" placeholder="Enter a city...">
+    <div>
+      <button id="search">Search</button>
+      <button id="locateMe">My location!</button>
+    </div>
+    <div class="weather-info">
+      <h2 id="location"></h2>
+      <p id="temperature"></p>
+      <p class="description" id="weather-desc"></p>
+    </div>
         <img id="weather-pic" src="https://openweathermap.org/img/wn/02d@2x.png"/>
     </div>
+    
 <script src="assets/scripts/app.js"> defer</script> 
 </body>
 </html>
